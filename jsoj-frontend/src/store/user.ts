@@ -5,7 +5,8 @@ export default {
   namespace: true,
   state: () => ({
     loginUser: {
-      userName: "未登录",
+      userName: "test",
+      role: "notLogin",
     },
   }),
   actions: {

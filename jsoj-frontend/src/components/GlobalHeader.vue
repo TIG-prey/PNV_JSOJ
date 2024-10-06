@@ -58,8 +58,9 @@ console.log(store.state.user.loginUser);
 setTimeout(() => {
   store.dispatch("getLoginUser", {
     userName: "JS",
+    role: "admin",
   });
-}, 1000);
+}, 3000);
 </script>
 
 <style>
