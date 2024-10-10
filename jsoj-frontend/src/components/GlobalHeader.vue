@@ -71,14 +71,14 @@ const doMenuClick = (key: string) => {
 };
 
 const store = useStore();
-console.log(store.state.user.loginUser);
-
-setTimeout(() => {
-  store.dispatch("getLoginUser", {
-    userName: "JS管理员",
-    userRole: ACCESS_ENUM.ADMIN,
-  });
-}, 3000);
+console.log("GlobalHeader查看store:", store.state.user);
+console.log("GlobalHeader查看store:", store.state.user.loginUser);
+// setTimeout(() => {
+//   store.dispatch("getLoginUser", {
+//     userName: "JS管理员",
+//     userRole: ACCESS_ENUM.ADMIN,
+//   });
+// }, 3000);
 </script>
 
 <style>
