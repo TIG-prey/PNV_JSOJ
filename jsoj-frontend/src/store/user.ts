@@ -23,19 +23,19 @@ export default {
           ...state.loginUser,
           userRole: ACCESS_ENUM.NOT_LOGIN,
         });
-        console.log("getLoginUser执行了");
+        // console.log("getLoginUser执行了");
       }
     },
   },
   mutations: {
     updateUser(state, payload) {
-      console.log("更新前的loginUser", state.loginUser);
-      console.log("mutations的updateUser执行的参数payload：", payload);
+      // console.log("更新前的loginUser", state.loginUser);
+      // console.log("mutations的updateUser执行的参数payload：", payload);
       state.loginUser = payload;
-      console.log(
-        "mutations的updateUser执行，更新后的loginUser:",
-        state.loginUser
-      );
+      // console.log(
+      //   "mutations的updateUser执行，更新后的loginUser:",
+      //   state.loginUser
+      // );
     },
   },
 } as StoreOptions<any>;

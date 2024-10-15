@@ -18,14 +18,14 @@ router.beforeEach(async (to, from, next) => {
     // 如果没登录，跳转到登录页面
     if (!loginUser || !loginUser.userRole) {
       console.log("执行了第一个if");
-      console.log("loginUser中的参数：", loginUser);
+      // console.log("loginUser中的参数：", loginUser);
       next(`/user/login?redirect=${to.fullPath}`);
       return;
     }
     // 如果已经登录了，但是权限不足，那么跳转到无权限页面
     if (!checkAccess(loginUser, needAccess)) {
       console.log("执行了第二个if");
-      console.log(!checkAccess(loginUser, needAccess));
+      // console.log(!checkAccess(loginUser, needAccess));
       next("/noAuth");
       return;
     }

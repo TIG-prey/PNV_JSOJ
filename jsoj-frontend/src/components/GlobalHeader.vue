@@ -38,7 +38,6 @@ import { routes } from "@/router/routers";
 import { useRouter } from "vue-router";
 import { computed, ref } from "vue";
 import { useStore } from "vuex";
-import ACCESS_ENUM from "@/access/accessEnum";
 import checkAccess from "@/access/checkAccess";
 
 const router = useRouter();
@@ -72,7 +71,7 @@ const doMenuClick = (key: string) => {
 
 const store = useStore();
 console.log("GlobalHeader查看store:", store.state.user);
-console.log("GlobalHeader查看store:", store.state.user.loginUser);
+// console.log("GlobalHeader查看store:", store.state.user.loginUser);
 // setTimeout(() => {
 //   store.dispatch("getLoginUser", {
 //     userName: "JS管理员",
