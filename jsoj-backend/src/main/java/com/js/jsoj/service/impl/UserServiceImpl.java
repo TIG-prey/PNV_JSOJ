@@ -16,10 +16,12 @@ import com.js.jsoj.model.vo.LoginUserVO;
 import com.js.jsoj.model.vo.UserVO;
 import com.js.jsoj.service.UserService;
 import com.js.jsoj.utils.SqlUtils;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import javax.servlet.http.HttpServletRequest;
+
 import lombok.extern.slf4j.Slf4j;
 import me.chanjar.weixin.common.bean.WxOAuth2UserInfo;
 import org.apache.commons.lang3.StringUtils;
@@ -29,8 +31,6 @@ import org.springframework.util.DigestUtils;
 
 /**
  * 用户服务实现
- *
-  
  */
 @Service
 @Slf4j

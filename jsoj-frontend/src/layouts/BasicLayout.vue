@@ -11,7 +11,9 @@
       </a-layout-content>
       <!--底部footer区域-->
       <a-layout-footer class="footer">
-        <a href="https://github.com/TIG-prey" target="_blank"> 程序员JS出品 </a>
+        <a href="https://github.com/TIG-prey" target="_blank">
+          程序员 JianShang 出品
+        </a>
       </a-layout-footer>
     </a-layout>
   </div>

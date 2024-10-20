@@ -7,6 +7,7 @@
           <img src="../assets/cubic.png" class="logo" />
           <div>Cubic OJ</div>
         </a-space>
+        <!--<GlobalHeader />-->
       </a-layout-header>
       <!--内容展示区-->
       <a-layout-content class="content">
@@ -23,6 +24,7 @@
 </template>
 <script>
 import { defineComponent } from "vue";
+import GlobalHeader from "@/components/GlobalHeader.vue";
 
 export default defineComponent({
   components: {},
@@ -46,6 +48,7 @@ export default defineComponent({
 #userLayout .content {
   margin-bottom: 16px;
   padding: 20px;
+  min-height: 50vh;
 }
 
 #userLayout .footer {

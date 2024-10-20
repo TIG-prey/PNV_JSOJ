@@ -4,9 +4,10 @@ import com.js.jsoj.constant.CommonConstant;
 import lombok.Data;
 
 /**
- * 分页请求
- *
-  
+ * @author JianShang
+ * @version 1.0.0
+ * @description 分页请求
+ * @date 2024-10-17 10:30:24
  */
 @Data
 public class PageRequest {

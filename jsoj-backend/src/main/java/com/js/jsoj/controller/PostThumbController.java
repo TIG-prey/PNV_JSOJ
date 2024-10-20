@@ -17,9 +17,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * 帖子点赞接口
- *
-  
+ * @author JianShang
+ * @version 1.0.0
+ * @description 帖子点赞接口
+ * @date 2024-10-15 03:21:25
  */
 @RestController
 @RequestMapping("/post_thumb")
