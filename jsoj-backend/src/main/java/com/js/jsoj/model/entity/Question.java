@@ -1,13 +1,10 @@
 package com.js.jsoj.model.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
+import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
-
-import com.js.jsoj.model.dto.question.JudgeConfig;
-import lombok.Data;
 
 /**
  * @author JianShang
