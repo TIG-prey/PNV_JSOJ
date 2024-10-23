@@ -14,6 +14,10 @@
       }"
       @page-change="onPageChange"
     >
+      <!--创建时间-->
+      <template #createTime="{ record }">
+        {{ moment(record.createTime).format("YYYY-MM-DD HH:mm:ss") }}
+      </template>
       <template #optional="{ record }">
         <a-space>
           <a-button type="primary" @click="doUpdate(record)">修改</a-button>
@@ -30,6 +34,7 @@ import message from "@arco-design/web-vue/es/message";
 
 import { useRouter } from "vue-router";
 import { Question, QuestionControllerService } from "../../../generated";
+import moment from "moment/moment";
 
 const tableRef = ref();
 
@@ -138,7 +143,7 @@ const columns = [
   },
   {
     title: "创建时间",
-    dataIndex: "createTime",
+    slotName: "createTime",
     align: "center",
   },
   {
