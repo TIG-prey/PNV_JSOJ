@@ -60,6 +60,7 @@ export const routes: Array<RouteRecordRaw> = [
     props: true,
     meta: {
       access: ACCESS_ENUM.USER,
+      hideInMenu: true,
     },
   },
   {
