@@ -8,6 +8,7 @@ import com.js.jsoj.common.ErrorCode;
 import com.js.jsoj.constant.CommonConstant;
 import com.js.jsoj.exception.BusinessException;
 
+import com.js.jsoj.judge.service.JudgeService;
 import com.js.jsoj.model.dto.questionsubmit.QuestionSubmitAddRequest;
 import com.js.jsoj.model.dto.questionsubmit.QuestionSubmitQueryRequest;
 import com.js.jsoj.model.entity.Question;
@@ -23,6 +24,7 @@ import com.js.jsoj.service.QuestionSubmitService;
 import com.js.jsoj.service.UserService;
 import com.js.jsoj.utils.SqlUtils;
 import org.apache.commons.lang3.ObjectUtils;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -31,6 +33,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -49,6 +52,10 @@ public class QuestionSubmitServiceImpl extends ServiceImpl<QuestionSubmitMapper,
 
     @Resource
     private UserService userService;
+
+    @Resource
+    @Lazy
+    private JudgeService judgeService;
 
     /**
      * 提交题目
@@ -85,6 +92,10 @@ public class QuestionSubmitServiceImpl extends ServiceImpl<QuestionSubmitMapper,
         if (!save) {
             throw new BusinessException(ErrorCode.SYSTEM_ERROR, "数据插入失败");
         }
+        // 异步执行判题服务
+        CompletableFuture.runAsync(() -> {
+            judgeService.doJudge(questionSubmit.getId());
+        });
         return questionSubmit.getId();
     }
 
